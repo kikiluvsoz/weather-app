@@ -1,0 +1,29 @@
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+h1 {
+  font-size: 100px;
+  margin-top: 20px;
+}
+h2 {
+  font-style: italic;
+  font-size: 35px;
+  margin-bottom: 80px;
+}
+
+.container {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+.input-group {
+  margin-bottom: 80px;
+}
+.forecast {
+  text-align: center;
+  margin-top: 50px;
+}
+.weather-icon {
+  font-size: 80px;
+}

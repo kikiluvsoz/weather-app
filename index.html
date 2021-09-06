@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/5ec6f47f0f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-1">
+          <button id="current-location-pin">
+            <i class="fas fa-map-marker-alt"></i>
+          </button>
+        </div>
+        <div class="col-3">
+          <form id="search-city-field">
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Search city"
+                id="search-city-input"
+              />
+              <button
+                class="btn btn-outline-secondary"
+                type="submit"
+                id="button-addon2"
+              >
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <h3 id="weather-description">Sunny ☀️</h3>
+      <h1 id="searched-city-temperature">22°C</h1>
+      <h2 id="searched-city-name">Copenhagen</h2>
+      <div class="row justify-content-end">
+        <div class="col-2">Wind</div>
+        <div class="col-1"><span id="wind"></span>km/h</div>
+      </div>
+      <div class="row">
+        <div class="col-9" id="current-day-time">Sunday 14:23</div>
+        <div class="col-2">Humidity</div>
+        <div class="col-1"><span id="humidity"></span>%</div>
+      </div>
+      <hr />
+      <div class="forecast">
+        <div class="row">
+          <div class="col">
+            Mon
+            <div class="weather-icon">☀️</div>
+            20°C
+          </div>
+          <div class="col">
+            Tue
+            <div class="weather-icon">☁️</div>
+            20°C
+          </div>
+          <div class="col">
+            Wed
+            <div class="weather-icon">🌧</div>
+            20°C
+          </div>
+          <div class="col">
+            Thu
+            <div class="weather-icon">⛅️</div>
+            20°C
+          </div>
+          <div class="col">
+            Fri
+            <div class="weather-icon">⛅️</div>
+            20°C
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/script.js"></script>
+  </body>
+</html>
