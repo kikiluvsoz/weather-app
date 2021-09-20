@@ -10,12 +10,12 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="src/styles.css" />
     <script
       src="https://kit.fontawesome.com/5ec6f47f0f.js"
       crossorigin="anonymous"
     ></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/styles.css" />
   </head>
   <body>
     <div class="container">
@@ -51,8 +51,12 @@
           </div>
         </div>
         <h3 id="weather-description">Sunny</h3>
-        <h1 id="searched-city-temperature">22°C</h1>
+        <h1 id="searched-city-temperature">22</h1>
         <h2 id="searched-city-name">Copenhagen</h2>
+        <span class="units"
+          ><a href="#" id="celsius-link" class="active">°C</a> |
+          <a href="#" id="fahrenheit-link">°F</a></span
+        >
         <div class="row justify-content-end">
           <div class="col-2">Wind</div>
           <div class="col-1"><span id="wind"></span>km/h</div>
