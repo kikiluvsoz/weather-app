@@ -19,7 +19,15 @@ function displayWeather(response) {
     response.data.wind.speed
   );
   document.querySelector("#weather-description").innerHTML =
-    response.data.weather[0].main;
+    response.data.weather[0].description;
+  document.getElementById("background-image").style.background =
+    "url(http://openweathermap.org/img/wn/" +
+    response.data.weather[0].icon +
+    "@2x.png)";
+  document.getElementById("background-image").style.backgroundRepeat =
+    "no-repeat";
+  document.getElementById("background-image").style.backgroundPosition =
+    "85% 15%";
 }
 
 function handleSubmit(event) {
