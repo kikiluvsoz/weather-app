@@ -9,7 +9,8 @@ function retrieveLocation(position) {
   axios.get(weatheUrl).then(displayWeather);
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   let forecastDays = ["Thu", "Fri", "Sat", "Sun", "Mon"];
@@ -28,6 +29,12 @@ function displayForecast() {
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = `401cf95fe972c3be04dccbfdca20a830`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&units=metric&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function displayWeather(response) {
@@ -49,6 +56,7 @@ function displayWeather(response) {
     "no-repeat";
   document.getElementById("background-image").style.backgroundPosition =
     "85% 15%";
+  getForecast(response.data.coord);
 }
 
 function handleSubmit(event) {
@@ -121,4 +129,3 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 searchCity("Copenhagen");
-displayForecast();
