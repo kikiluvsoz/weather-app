@@ -9,23 +9,39 @@ function retrieveLocation(position) {
   axios.get(weatheUrl).then(displayWeather);
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let weatherForecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let forecastDays = ["Thu", "Fri", "Sat", "Sun", "Mon"];
-  forecastDays.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
-      <div class="col">${day}
-        <div class="weather-icon">☀️</div>
+  weatherForecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
+      <div class="col">${formatDay(forecastDay.dt)}
+        <img 
+        src="http://openweathermap.org/img/wn/${
+          forecastDay.weather[0].icon
+        }@2x.png"
+        />
           <div class="forecast-temperature">
-            <span class="forecast-temperature-max">20°</span>
-            <span class="forecast-temperature-min">15°</span>
+            <span class="forecast-temperature-max">${Math.round(
+              forecastDay.temp.max
+            )}°</span>
+            <span class="forecast-temperature-min">${Math.round(
+              forecastDay.temp.min
+            )}°</span>
           </div>
       </div>
   `;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
@@ -48,10 +64,9 @@ function displayWeather(response) {
   );
   document.querySelector("#weather-description").innerHTML =
     response.data.weather[0].description;
-  document.getElementById("background-image").style.background =
-    "url(http://openweathermap.org/img/wn/" +
-    response.data.weather[0].icon +
-    "@2x.png)";
+  document.getElementById(
+    "background-image"
+  ).style.background = `url(http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png)`;
   document.getElementById("background-image").style.backgroundRepeat =
     "no-repeat";
   document.getElementById("background-image").style.backgroundPosition =
