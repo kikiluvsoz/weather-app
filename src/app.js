@@ -108,25 +108,6 @@ function displayDate(date) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function displayFahrenheitTemperature(event) {
-  event.preventDefault();
-  let fahrenheitTemperature = Math.round((celsiusTemperature * 9) / 5 + 32);
-  let temperatureElement = document.querySelector("#searched-city-temperature");
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  temperatureElement.innerHTML = `${fahrenheitTemperature}°F`;
-}
-
-function displayCelsiusTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#searched-city-temperature");
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  temperatureElement.innerHTML = `${celsiusTemperature}°C`;
-}
-
-let celsiusTemperature = null;
-
 let currentDayTime = document.querySelector("#current-day-time");
 let now = new Date();
 currentDayTime.innerHTML = displayDate(now);
@@ -136,11 +117,5 @@ searchField.addEventListener("submit", handleSubmit);
 
 let currentLocation = document.querySelector("#current-location-pin");
 currentLocation.addEventListener("click", setLocationPin);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 searchCity("Copenhagen");
