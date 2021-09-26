@@ -9,6 +9,27 @@ function retrieveLocation(position) {
   axios.get(weatheUrl).then(displayWeather);
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let forecastDays = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+  forecastDays.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col">${day}
+        <div class="weather-icon">☀️</div>
+          <div class="forecast-temperature">
+            <span class="forecast-temperature-max">20°</span>
+            <span class="forecast-temperature-min">15°</span>
+          </div>
+      </div>
+  `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayWeather(response) {
   document.querySelector("#searched-city-name").innerHTML = response.data.name;
   celsiusTemperature = Math.round(response.data.main.temp);
@@ -100,3 +121,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 searchCity("Copenhagen");
+displayForecast();

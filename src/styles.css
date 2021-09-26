@@ -45,10 +45,14 @@ h3::first-letter {
 
 .forecast {
   text-align: center;
-  margin-top: 50px;
+  font-weight: bold;
+  margin-top: 30px;
 }
 .weather-icon {
   font-size: 80px;
+}
+.forecast-temperature-min {
+  font-weight: normal;
 }
 .footer {
   margin-top: 20px;
