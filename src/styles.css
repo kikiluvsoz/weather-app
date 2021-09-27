@@ -14,7 +14,7 @@ h2 {
   font-size: 35px;
   margin-bottom: 50px;
 }
-h3::first-letter {
+h3:first-letter {
   text-transform: capitalize;
 }
 
@@ -26,21 +26,18 @@ h3::first-letter {
   border-radius: 5px;
   font-family: quicksand;
 }
+
 .location-button {
-  width: 5%;
-}
-.input-group {
-  margin-bottom: 50px;
-}
-.units {
-  display: block;
-  text-align: right;
+  width: 40px;
 }
 
-.units .active {
-  color: black;
-  cursor: default;
-  text-decoration: none;
+.btn-light:hover {
+  color: white;
+  background: #6c757d;
+}
+
+.input-group {
+  margin-bottom: 50px;
 }
 
 .forecast {
