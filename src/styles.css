@@ -1,20 +1,31 @@
+body {
+  background: radial-gradient(
+    343px at 46.3% 47.5%,
+    rgb(242, 242, 242) 0%,
+    rgb(241, 241, 241) 72.9%
+  );
+}
+
 h1,
 h2,
 h3,
 .footer {
   text-align: center;
 }
+
 h1 {
   font-size: 100px;
   margin-top: 20px;
 }
+
 h2 {
   font-family: roboto;
   font-style: italic;
   font-size: 35px;
   margin-bottom: 50px;
 }
-h3:first-letter {
+
+h3::first-letter {
   text-transform: capitalize;
 }
 
@@ -22,9 +33,14 @@ h3:first-letter {
   max-width: 800px;
   margin: 20px auto;
   padding: 30px;
-  border: 1px solid gainsboro;
   border-radius: 5px;
   font-family: quicksand;
+  background: linear-gradient(
+    67.6deg,
+    rgb(225, 242, 254) -2.8%,
+    rgb(193, 224, 250) 44.6%,
+    rgb(19, 116, 197) 102.4%
+  );
 }
 
 .location-button {

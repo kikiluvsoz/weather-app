@@ -70,14 +70,14 @@ function displayWeather(response) {
       "src",
       `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
-  document.getElementById(
-    "background-image"
-  ).style.background = `url(http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png)`;
-  document.getElementById("background-image").style.backgroundRepeat =
-    "no-repeat";
-  document.getElementById("background-image").style.backgroundPosition =
-    "85% 15%";
-  document.getElementById("background-image").style.backgroundSize = "30% 40%";
+  //document.getElementById(
+  //  "background-image"
+  //).style.background = `url(http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png)`;
+  //document.getElementById("background-image").style.backgroundRepeat =
+  //  "no-repeat";
+  //document.getElementById("background-image").style.backgroundPosition =
+  //  "85% 15%";
+  //document.getElementById("background-image").style.backgroundSize = "30% 40%";
   getForecast(response.data.coord);
 }
 
