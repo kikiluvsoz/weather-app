@@ -31,6 +31,13 @@ h3:first-letter {
   width: 40px;
 }
 
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 40px;
+}
+
 .btn-light:hover {
   color: white;
   background: #6c757d;

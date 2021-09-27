@@ -64,6 +64,12 @@ function displayWeather(response) {
   );
   document.querySelector("#weather-description").innerHTML =
     response.data.weather[0].description;
+  document
+    .querySelector("#weather-icon")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
   document.getElementById(
     "background-image"
   ).style.background = `url(http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png)`;
@@ -71,6 +77,7 @@ function displayWeather(response) {
     "no-repeat";
   document.getElementById("background-image").style.backgroundPosition =
     "85% 15%";
+  document.getElementById("background-image").style.backgroundSize = "30% 40%";
   getForecast(response.data.coord);
 }
 
